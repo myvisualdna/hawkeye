@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-700 rounded-full focus:ring-0 ring-indigo-500 
+    focus:border-indigo-500 block w-full sm:text-sm text-neutral-900 dark:text-neutral-200;
+  }
+}
+
+@layer components {
+  .primary-button {
+    @apply inline-block px-12 py-3 text-sm font-medium text-white bg-gray-900 border border-gray-900 rounded active:text-gray-500 active:border-gray-500 hover:bg-transparent hover:text-gray-900 focus:outline-none;
+  }
+  .secondary-button {
+    @apply inline-block px-12 py-3 text-sm font-medium text-gray-900 border border-gray-900 rounded hover:bg-gray-900 hover:text-white active:bg-gray-100 active:border-gray-900  active:text-black focus:outline-none;
+  }
+  .tertiary-button {
+    @apply inline-block px-12 py-3 text-sm font-medium text-black bg-gray-100 border border-gray-100 rounded active:text-gray-100 active:border-gray-100 hover:bg-gray-900 hover:text-gray-100 hover:border-gray-900 focus:outline-none;
+  }
+  /* ... */
+  .header-link {
+    @apply font-display font-medium text-base text-gray-900 transition ease-in duration-200 hover:text-gray-300;
+  }
+}
