@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import StayCardH from 'src/components/Cards/StayCardH/StayCardH';
 import { sortRows, filterRows, paginateRows } from './helpers';
 import { Pagination } from './Pagination';
 
@@ -6,7 +7,7 @@ export const Table = ({ columns, rows }) => {
   const [activePage, setActivePage] = useState(1);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState({ order: 'asc', orderBy: 'id' });
-  const rowsPerPage = 3;
+  const rowsPerPage = 10;
 
   const filteredRows = useMemo(
     () => filterRows(rows, filters),
@@ -77,67 +78,20 @@ export const Table = ({ columns, rows }) => {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            {columns.map((column) => {
-              const sortIcon = () => {
-                if (column.accessor === sort.orderBy) {
-                  if (sort.order === 'asc') {
-                    return '⬆️';
-                  }
-                  return '⬇️';
-                } else {
-                  return '️↕️';
-                }
-              };
-              return (
-                <th key={column.accessor}>
-                  <span>{column.label}</span>
-                  <button onClick={() => handleSort(column.accessor)}>
-                    {sortIcon()}
-                  </button>
-                </th>
-              );
-            })}
-          </tr>
-          <tr>
-            {columns.map((column) => {
-              return (
-                <th key={`${column.accessor}-search`} className=' border-2'>
-                  <input
-                    key={`${column.accessor}-search`}
-                    type="search"
-                    placeholder={`Search ${column.label}`}
-                    value={filters[column.accessor]}
-                    onChange={(event) =>
-                      handleSearch(event.target.value, column.accessor)
-                    }
-                  />
-                </th>
-              );
-            })}
-          </tr>
-        </thead>
-        <tbody>
+        <div >
           {calculatedRows.map((row) => {
             return (
-              <tr key={row.id}>
+              <div key={row.id} className='my-4'>
                 {columns.map((column) => {
-                  if (column.format) {
-                    return (
-                      <td key={column.accessor}>
-                        {column.format(row[column.accessor])}
-                      </td>
-                    );
-                  }
-                  return <td key={column.accessor}>{row[column.accessor]}</td>;
+                  return <div key={column.accessor}>
+                    {/* {row[column.accessor]} */}
+                    <StayCardH data={row} />
+                    </div>;
                 })}
-              </tr>
+              </div>
             );
           })}
-        </tbody>
-      </table>
+        </div>
 
       {count > 0 ? (
         <Pagination
@@ -156,9 +110,10 @@ export const Table = ({ columns, rows }) => {
           <button onClick={clearAll}>Clear all</button>
         </p>
       </div>
-      <button onClick={() => handleSort('name')} className='border-2 rounded-full'>test sorting by name</button>
-      <button onClick={() => handleSortAsc('age')} className='border-2 rounded-full'>test sorting by age ASC</button>
-      <button onClick={() => handleSortDesc('age')} className='border-2 rounded-full'>test sorting by age DESC</button>
+      <button onClick={() => handleSort('id')} className='border-2 rounded-full'>test sorting by id</button>
+      <button onClick={() => handleSortAsc('propertyType')} className='border-2 rounded-full'>test sorting by propertyType ASC</button>
+      <button onClick={() => handleSortDesc('propertyType')} className='border-2 rounded-full'>test sorting by propertyType DESC</button>
+      <button onClick={() => handleSortDesc('date')} className='border-2 rounded-full'>test sorting by date DESC</button>
     </>
   );
 };

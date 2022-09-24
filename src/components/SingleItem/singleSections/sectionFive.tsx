@@ -7,7 +7,7 @@ const SectionFive = (props: Props) => {
     <div >
       {/* HEADING */}
       <div>
-        <h2 className="text-2xl font-semibold font-display mb-8">Price history</h2>
+        <h2 className="font-display font-bold text-2xl mb-8 text-gray-800">Price history</h2>
         {/* <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
           Prices may increase on weekends or holidays
         </span> */}

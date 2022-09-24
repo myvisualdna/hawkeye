@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import { HiOutlineCheck, HiOutlineChevronDown } from 'react-icons/hi';
 import { IoClose } from 'react-icons/io5';
+import { IoMdSearch } from 'react-icons/io';
 
 type Props = {};
 
@@ -37,11 +38,12 @@ const ComboSearchPage = (props: Props) => {
     <div className="">
       <div>
         <Combobox value={selected} onChange={setSelected}>
-          <div className="relative mt-1">
-            <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm ">
-              <div className="flex">
+          <div className="relative">
+            <div className="relative w-72 cursor-default overflow-hidden rounded-lg bg-white text-left  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm p-2 border-2 border-solid border-gray-100">
+              <div className="flex justify-center content-center items-center">
+                <IoMdSearch className='w-6 h-6 ml-2' />
                 <Combobox.Input
-                  className="w-full border-none py-1 pl-3 pr-10 leading-5 text-gray-800 focus:ring-0 font-display font-bold text-lg placeholder:text-gray-300 placeholder:text-base placeholder:font-semibold"
+                  className="w-full border-none py-1 pl-3 pr-10 leading-5 text-gray-800 focus:ring-0 font-display font-semibold text-sm placeholder:text-gray-300 placeholder:text-sm placeholder:font-medium"
                   displayValue={(person) => person.name}
                   onChange={(event) => setQuery(event.target.value)}
                   placeholder='Search by City, State, Zip'
@@ -61,9 +63,9 @@ const ComboSearchPage = (props: Props) => {
                 aria-hidden="true"
               />
             </Combobox.Button> */}
-              <Combobox.Button className="font-display text-sm text-gray-400 ml-3">
+              {/* <Combobox.Button className="font-display text-sm text-gray-400 ml-3">
                 Where are we going?
-              </Combobox.Button>
+              </Combobox.Button> */}
             </div>
             <Transition
               as={Fragment}

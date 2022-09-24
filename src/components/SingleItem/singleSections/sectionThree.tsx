@@ -148,7 +148,7 @@ const SectionThree = (props: Props) => {
   return (
     <div>
       <div>
-        <h1 className="font-display font-semibold text-2xl mb-8">Amenities</h1>
+        <h1 className="font-display font-bold text-2xl mb-8 text-gray-800">Amenities</h1>
         {/* <h4 className="font-body font-regular text-base text-gray-400 mt-2">
           This property offers the following amenities:
         </h4> */}

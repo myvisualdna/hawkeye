@@ -432,19 +432,16 @@ const CardCategory2: FC<CardCategory3Props> = ({
   };
 
   return (
-    <Link
-      href={href}
-      className={`nc-CardCategory3 flex flex-col ${className}`}
-      data-nc-id="CardCategory3"
-    >
-      {/* <Model1 /> */}
+    <div>
+    {/* <Link
+    //   href={href}
+    //   className={`nc-CardCategory3 flex flex-col ${className}`}
+    //   data-nc-id="CardCategory3"
+    // > */}
       <Model6 />
-      {/* <Model2 /> */}
-      {/* <Model4 /> */}
 
-      {/* <Model5 /> */}
-      {/* <Model7 /> */}
-    </Link>
+    {/* </Link> */}
+    </div>
   );
 };
 

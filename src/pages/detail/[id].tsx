@@ -5,6 +5,8 @@ import CarouselLoading from 'src/components/SingleItem/singleElements/carouselLo
 import SectionSliderNewCategories from 'src/components/Homepage/SectionSliderNewCategories/SectionSliderNewCategories';
 import BackgroundSection from 'src/components/SingleItem/BackgroundSection/BackgroundSection';
 import Container  from 'src/components/Navigation/navContainer';
+import { useRouter } from 'next/router'
+
 
 
 
@@ -23,6 +25,9 @@ const PHOTOS: string[] = [
 type Props = {}
 
 const SingleItem = (props: Props) => {
+  const router = useRouter()
+  const { id } = router.query
+  console.log(id)
 
   const RenderPhotoHeader = dynamic(() => 
   import("src/components/SingleItem/singleSections/renderPhotoHeader"), {loading: () => <CarouselLoading />});
