@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import StartRating from 'src/components/SingleItem/StartRating/StartRating';
+// import StartRating from 'src/components/SingleItem/StartRating/StartRating';
 import Avatar from 'src/components/Shared/Avatar/Avatar';
 import { Tab } from '@headlessui/react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import setHours from 'date-fns/setHours';
 import setMinutes from 'date-fns/setMinutes';
-import { MdOutlineIosShare } from 'react-icons/md';
-import { RiHeartLine } from 'react-icons/ri';
 
 type Props = {};
 
@@ -29,7 +27,7 @@ const RenderSidebar = (props: Props) => {
         <span className="text-3xl font-semibold font-display">
           $119.000
         </span>
-        <StartRating />
+        {/* <StartRating /> */}
       </div>
 
 
