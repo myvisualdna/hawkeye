@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import SearchResultCard from 'src/components/Cards/SearchResultCard';
 import StayCardH from 'src/components/Cards/StayCardH/StayCardH';
 import { sortRows, filterRows, paginateRows } from './helpers';
 import { Pagination } from './Pagination';
@@ -78,20 +79,43 @@ export const Table = ({ columns, rows }) => {
 
   return (
     <>
-        <div >
-          {calculatedRows.map((row) => {
-            return (
-              <div key={row.id} className='my-4'>
-                {columns.map((column) => {
-                  return <div key={column.accessor}>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-8 gap-x-4 ">
+        {calculatedRows.map((row) => {
+          return (
+            <div key={row.id} className="">
+              {columns.map((column) => {
+                return (
+                  <div key={column.accessor}>
                     {/* {row[column.accessor]} */}
-                    <StayCardH data={row} />
-                    </div>;
-                })}
-              </div>
-            );
-          })}
-        </div>
+                    {/* <StayCardH data={row} /> */}
+                    <SearchResultCard data={row} />
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+      <button
+        onclick="buttonHandler()"
+        title="Mobile Search Button"
+        class="fixed lg:hidden z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+          />
+        </svg>
+      </button>
 
       {count > 0 ? (
         <Pagination
@@ -110,10 +134,30 @@ export const Table = ({ columns, rows }) => {
           <button onClick={clearAll}>Clear all</button>
         </p>
       </div>
-      <button onClick={() => handleSort('id')} className='border-2 rounded-full'>test sorting by id</button>
-      <button onClick={() => handleSortAsc('propertyType')} className='border-2 rounded-full'>test sorting by propertyType ASC</button>
-      <button onClick={() => handleSortDesc('propertyType')} className='border-2 rounded-full'>test sorting by propertyType DESC</button>
-      <button onClick={() => handleSortDesc('date')} className='border-2 rounded-full'>test sorting by date DESC</button>
+      <button
+        onClick={() => handleSort('id')}
+        className="border-2 rounded-full"
+      >
+        test sorting by id
+      </button>
+      <button
+        onClick={() => handleSortAsc('propertyType')}
+        className="border-2 rounded-full"
+      >
+        test sorting by propertyType ASC
+      </button>
+      <button
+        onClick={() => handleSortDesc('propertyType')}
+        className="border-2 rounded-full"
+      >
+        test sorting by propertyType DESC
+      </button>
+      <button
+        onClick={() => handleSortDesc('date')}
+        className="border-2 rounded-full"
+      >
+        test sorting by date DESC
+      </button>
     </>
   );
 };

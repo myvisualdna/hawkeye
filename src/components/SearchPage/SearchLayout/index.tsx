@@ -13,10 +13,9 @@ const SearchLayout = (props: Props) => {
   return (
     <div>
       <header className="sticky top-0 bg-white shadow-sm z-40">
-        <div className="p-4 mx-auto max-w-screen-2xl sticky top-0">
-          <div className="flex items-center justify-between space-x-4 lg:space-x-10">
-            <div className="flex lg:w-0 lg:flex-1 gap-2">
-              {/* <span className="w-20 h-10 bg-gray-200 rounded-lg"></span> */}
+        <div className="hidden lg:flex p-4 mx-auto max-w-screen-2xl sticky top-0">
+          <div className="hidden lg:flex items-center justify-between space-x-4 lg:space-x-10">
+            <div className="flex lg:w-0 lg:flex-1 gap-2 ">
               <ComboSearchPage />
               <SaleTypeListbox />
               <BedsListbox />
@@ -24,38 +23,6 @@ const SearchLayout = (props: Props) => {
               <PriceListbox />
               <button className='secondary-button'>Search</button>
             </div>
-
-            {/* <nav className="hidden text-sm font-medium space-x-8 md:flex">
-              <a className="text-gray-500" href="">
-                About
-              </a>
-              <a className="text-gray-500" href="">
-                Blog
-              </a>
-              <a className="text-gray-500" href="">
-                Projects
-              </a>
-              <a className="text-gray-500" href="">
-                Contact
-              </a>
-
-            </nav> */}
-
-            {/* <div className="items-center justify-end flex-1 hidden space-x-4 sm:flex">
-              <a
-                className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"
-                href=""
-              >
-                Log in
-              </a>
-
-              <a
-                className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
-                href=""
-              >
-                Sign up
-              </a>
-            </div> */}
 
             <div className="lg:hidden">
               <button
@@ -85,7 +52,6 @@ const SearchLayout = (props: Props) => {
       </header>
       <div>
         <SearchBody />
-
       </div>
     </div>
   );

@@ -10,6 +10,8 @@ import type { AppRouter } from '../server/router';
 import './index.css'
 import '@glidejs/glide/dist/css/glide.core.min.css'
 import '../styles/globals.css'
+import '../styles/index.scss'
+// import '../styles/_slider.scss'
 
 
 

@@ -21,7 +21,7 @@ const RenderSidebar = (props: Props) => {
   );
 
   return (
-    <div className="listingSectionSidebar__wrap shadow-xl p-8 rounded-2xl">
+    <div className="listingSectionSidebar__wrap shadow-xl p-8 rounded-2xl border-solid border-2 border-gray-100">
       {/* PRICE */}
       <div className="flex justify-between mb-4">
         <span className="text-3xl font-semibold font-display">

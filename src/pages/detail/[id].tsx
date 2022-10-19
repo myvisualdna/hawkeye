@@ -6,6 +6,7 @@ import SectionSliderNewCategories from 'src/components/Homepage/SectionSliderNew
 import BackgroundSection from 'src/components/SingleItem/BackgroundSection/BackgroundSection';
 import Container from 'src/components/Navigation/navContainer';
 import { useRouter } from 'next/router';
+import PromotedCards from 'src/components/Cards/PromotedCards';
 
 const property = {
   id: '21521551',
@@ -159,16 +160,16 @@ const SingleItem = (props: Props) => {
     <div>
       <Container>
         <div
-          className={`ListingDetailPage nc-ListingStayDetailPage grid grid-cols-1 justify-items-center p-4`}
+          className={`ListingDetailPage nc-ListingStayDetailPage grid grid-cols-1 justify-items-center p-4 `}
           data-nc-id="ListingStayDetailPage"
         >
           {/* SINGLE HEADER */}
           <RenderPhotoHeader imgs={PHOTOS} />
 
           {/* MAIn */}
-          <main className="container relative z-10 mt-11 flex flex-col lg:flex-row xl:px-24 ">
+          <main className="container relative z-10 mt-11 flex flex-col lg:flex-row xl:px-32 xl:gap-16">
             {/* CONTENT */}
-            <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:space-y-10 lg:pr-10">
+            <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:space-y-10">
               <SectionOne propertyData={property} />
               <SectionTwo />
               <SectionThree propertyData={property} />
@@ -190,16 +191,22 @@ const SingleItem = (props: Props) => {
 
           {/* OTHER SECTION */}
           {
-            <div className="container py-24 lg:py-32">
+            <div className="container py-24 lg:py-16 lg:px-32">
+              <PromotedCards
+                      categoryCardType="card2"
+                      subHeading="Find your home in the largest cities in the US"
+                      heading="Similar Homes You May Like"
+                      itemPerRow={5}
+                      uniqueClassName="PageHome2_s1" />
               {/* SECTION 1 */}
-              <div className="relative py-16">
+              <div className="relative py-2">
                 <BackgroundSection />
                 <SectionSliderNewCategories
                   heading="Explore by types of stays"
                   subHeading="Explore houses based on 10 types of stays"
                   categoryCardType="card5"
                   itemPerRow={5}
-                  sliderStyle="style2"
+                  sliderStyle="style1"
                   uniqueClassName={'ListingStayDetailPage1'}
                 />
               </div>

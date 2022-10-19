@@ -1,9 +1,9 @@
-import Glide from "@glidejs/glide";
+import Glide from '@glidejs/glide';
 import useNcId from 'src/hooks/useNcId';
-import React, { FC, useEffect, useMemo } from "react";
+import React, { FC, useEffect, useMemo } from 'react';
 import NcImage from 'src/components/Shared/NcImage/NcImage';
 import NextPrev from 'src/components/Shared/NextPrev/NextPrev';
-import Link from 'next/link'
+import Link from 'next/link';
 
 
 export interface GallerySliderProps {
@@ -15,11 +15,11 @@ export interface GallerySliderProps {
 }
 
 const GallerySlider: FC<GallerySliderProps> = ({
-  className = "",
+  className = 'border-solid border-2 border-red-600 h-full',
   galleryImgs,
-  ratioClass = "aspect-w-4 aspect-h-3",
-  uniqueID = "uniqueID",
-  href = "/listing-stay-detail",
+  ratioClass = 'aspect-w-4 aspect-h-3',
+  uniqueID = 'uniqueID',
+  href = '/listing-stay-detail',
 }) => {
   const UNIQUE_CLASS = `gallerySlider__${uniqueID}` + useNcId();
 
@@ -57,13 +57,12 @@ const GallerySlider: FC<GallerySliderProps> = ({
   const renderSliderGallery = () => {
     return (
       <div className={`${UNIQUE_CLASS} relative group overflow-hidden`}>
-        <div className="glide__track" data-glide-el="track">
-          <ul className="glide__slides">
+        <div className="glide__track " data-glide-el="track">
+          <ul className="glide__slides ">
             {galleryImgs.map((item, index) => (
-              <li key={index} className="glide__slide">
+              <li key={index} className="glide__slide border-solid border-2 border-green-600">
                 {/* <Link href={href || ""} className={`block ${ratioClass}`}> */}
-                  <NcImage containerClassName="flex aspect-w-5 aspect-h-3 md:aspect-h-5 w-full h-0" src={item} />
-
+                <NcImage containerClassName="flex aspect-w-5 aspect-h-4 md:aspect-h-5" src={item} />
               </li>
             ))}
           </ul>
