@@ -6,14 +6,16 @@ import MenuDropdown from '../SearchComponents/menuDropdown';
 import PropertyTypeListbox from '../SearchComponents/propertyTypeListbox';
 import SaleTypeListbox from 'src/components/SearchPage/SearchComponents/saleTypeListbox'
 import SearchBody from '../SearchBody';
+import SearchResults from '../SearchResults';
+import SearchEngine from '../SearchEngine';
 
 type Props = {};
 
 const SearchLayout = (props: Props) => {
   return (
     <div>
-      <header className="sticky top-0 bg-white shadow-sm z-40">
-        <div className="hidden lg:flex p-4 mx-auto max-w-screen-2xl sticky top-0">
+      {/* <header className="sticky top-0 bg-white shadow-sm z-40">
+        <div className="hidden lg:flex p-4 mx-auto max-w-screen-3xl sticky top-0">
           <div className="hidden lg:flex items-center justify-between space-x-4 lg:space-x-10">
             <div className="flex lg:w-0 lg:flex-1 gap-2 ">
               <ComboSearchPage />
@@ -49,9 +51,11 @@ const SearchLayout = (props: Props) => {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
       <div>
         <SearchBody />
+        {/* <SearchResults /> */}
+        {/* <SearchEngine /> */}
       </div>
     </div>
   );

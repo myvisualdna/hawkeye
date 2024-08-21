@@ -4,14 +4,11 @@ type Props = {};
 
 const SectionFive = (props: Props) => {
   return (
-    <div >
+    <div className='mt-8'>
       {/* HEADING */}
-      <div>
-        <h2 className="font-display font-bold text-2xl mb-8 text-gray-800">Price history</h2>
-        {/* <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-          Prices may increase on weekends or holidays
-        </span> */}
-      </div>
+      <div className="pb-5 border-b border-gray-200 mb-6">
+      <h3 className="text-2xl leading-6 font-medium text-gray-900">Price History</h3>
+    </div>
 
       <div className="overflow-x-auto relative">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -68,8 +65,7 @@ const SectionFive = (props: Props) => {
           </tbody>
         </table>
       </div>
-      <h4 className='font-body text-sm font-medium mt-2 text-gray-400'>*Data Provided by users Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate</h4>
-      <hr className="border-1 border-gray-200 rounded-full duration-500 my-12" />
+      <h4 className='font-body text-xs font-medium mt-2 text-gray-400'>*Data Provided by users Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate</h4>
     </div>
   );
 };

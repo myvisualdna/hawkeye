@@ -1,6 +1,6 @@
 import React from 'react'
 import NavContainer from 'src/components/Navigation/navContainer'
-import SearchPage from 'src/components/SearchPage'
+// import SearchPage from 'src/components/SearchPage'
 import SearchLayout from 'src/components/SearchPage/SearchLayout'
 
 type Props = {}

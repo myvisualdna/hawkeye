@@ -167,7 +167,7 @@ const PromotedCards: FC<SectionSliderNewCategoriesProps> = ({
             ))}
           </ul>
         </div>
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <a
             className="inline-flex items-center px-8 py-3 text-gray-900 border border-gray-900 rounded hover:bg-gray-900 hover:text-white active:bg-gray-100 active:text-gray-900 focus:outline-none focus:ring"
             href="/download"
@@ -189,7 +189,7 @@ const PromotedCards: FC<SectionSliderNewCategoriesProps> = ({
               />
             </svg>
           </a>
-        </div>
+        </div> */}
         {sliderStyle === 'style2' && (
           <NextPrev className="justify-center mt-16" />
         )}

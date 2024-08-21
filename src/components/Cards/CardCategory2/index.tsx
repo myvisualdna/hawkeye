@@ -376,7 +376,9 @@ const CardCategory2: FC<CardCategory3Props> = ({
               </h4>
             </div>
           </div>
-          <p className="mt-1 text-lg font-body font-semibold text-gray-900">$240.000</p>
+          <p className="mt-1 text-lg font-body font-semibold text-gray-900">
+            $240.000
+          </p>
         </a>
       </div>
     );
@@ -384,63 +386,39 @@ const CardCategory2: FC<CardCategory3Props> = ({
 
   const Model7 = () => {
     return (
-      <a
-        className="block overflow-hidden border border-gray-100 rounded-lg shadow-sm mb-6"
-        href=""
-      >
-        <img
-          className="object-cover w-full h-56"
-          src={thumbnail}
-          alt=""
-        />
-
-        <div className="p-6">
-          <h5 className="text-xl font-bold">
-            $192.000
-          </h5>
-          <h3 className="mt-1 font-body text-sm text-gray-700">{name}</h3>
-          <p className="mb-1 font-normal text-sm text-gray-700 dark:text-gray-400 my-1">
-            2312 Main St., Miami - FL, 29012
-          </p>
-          <div className="grid grid-cols-3 gap-1 mt-0">
-            <div className="h-2 flex items-center col-span-3 my-1">
-              <h4 className="font-body font-regular text-sm text-gray-700 mr-1">
-                <span className="font-body font-regular text-sm text-gray-700 mr-1">
-                  2
-                </span>{' '}
-                Bed
-              </h4>
-              <div className="mr-1 text-gray-700">•</div>
-              <h4 className="font-body font-regular text-sm text-gray-700 mr-1">
-                <span className="font-body font-regular text-sm text-gray-700 mr-1">
-                  2
-                </span>{' '}
-                Bath
-              </h4>
-              <div className="mr-1 text-gray-700">•</div>
-              <h4 className="font-body font-regular text-sm text-gray-700 mr-1">
-                <span className="font-body font-regular text-sm text-gray-700 mr-1">
-                  1242
-                </span>{' '}
-                Sqft
-              </h4>
-            </div>
-          </div>
+      <a href="/" className="group text-sm">
+        <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden bg-gray-100 group-hover:opacity-75">
+          <img
+            src={thumbnail}
+            alt="{product.imageAlt}"
+            className="w-full h-full object-cover object-center group-hover:scale-110 transition duration-200"
+          />
         </div>
+
+        <h3 className="mt-4 font-medium text-gray-900">
+          <span className="mr-2">2 Bed</span>
+          <span className="mr-2">2 Bath</span>
+          <span className="mr-2">241 Sqft.</span>
+        </h3>
+        <p className="text-gray-500 italic">1823 Limestone Ln</p>
+        <p className="text-gray-500 italic">Oakland, CA 29402</p>
+        <p className="mt-2 font-medium text-gray-900">$230.000</p>
       </a>
     );
   };
 
   return (
     <div>
-    {/* <Link
+      {/* <Link
     //   href={href}
     //   className={`nc-CardCategory3 flex flex-col ${className}`}
     //   data-nc-id="CardCategory3"
     // > */}
-      <Model6 />
+      {/* <Model6 /> */}
 
-    {/* </Link> */}
+      {/* </Link> */}
+      {/* <Model6 /> */}
+      <Model7 />
     </div>
   );
 };

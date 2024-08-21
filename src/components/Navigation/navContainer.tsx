@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import Head from 'next/head';
 import Navigation from './navigation';
 import Footer from './footer';
@@ -8,6 +8,7 @@ type Props = {
 };
 
 const NavContainer = (props: Props) => {
+
   return (
     <div>
       <Head>{''}</Head>

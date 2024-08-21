@@ -34,7 +34,7 @@ export default function PriceListbox() {
             <Popover.Button
               className={`
                 ${open ? '' : 'text-opacity-90'}
-                group inline-flex items-center rounded-md bg-transparent px-3 py-2 text-base font-medium text-black hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 border-2 border-solid border-gray-100 h-full w-full`}
+                group inline-flex items-center rounded-md bg-transparent px-3 py-2 text-base font-medium text-black hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 border border-solid border-gray-100 h-full w-full`}
             >
               <span>Price</span>
               <HiOutlineChevronDown

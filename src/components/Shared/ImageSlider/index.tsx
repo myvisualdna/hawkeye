@@ -17,6 +17,7 @@ export default function ImageSlider({ galleryImgs }) {
   console.log(galleryImgs);
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [hoverArrows, setHoverArrows] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
@@ -27,9 +28,20 @@ export default function ImageSlider({ galleryImgs }) {
     },
   });
 
+  const handleMouseOver = () => {
+    console.log("🚀 ~ file: index.tsx ~ line 35 ~ handleMouseOver ~ hello")
+    setHoverArrows(true)
+  }
+
+  const handleMouseOut = () => {
+    console.log("🚀 ~ file: index.tsx ~ line 35 ~ handleMouseOver ~ OUT")
+    setHoverArrows(false)
+  }
+
+
   return (
     <>
-      <div className="navigation-wrapper">
+      <div className="navigation-wrapper" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} >
         <div ref={sliderRef} className="keen-slider h-full">
           {galleryImgs.map((img, index) => (
             <div className="keen-slider__slide number-slide1" key={index}>
@@ -50,6 +62,7 @@ export default function ImageSlider({ galleryImgs }) {
                 e.stopPropagation() || instanceRef.current?.prev()
               }
               disabled={currentSlide === 0}
+              className={hoverArrows === true ? "text-gray-800 bg-slate-200 shadow-2xl rounded-full p-2 duration-700 hover:opacity-75" : "text-transparent"}
             />
             <Arrow
               onClick={(e: any) =>
@@ -59,6 +72,7 @@ export default function ImageSlider({ galleryImgs }) {
                 currentSlide ===
                 instanceRef.current.track.details.slides.length - 1
               }
+              className={hoverArrows === true ? "text-gray-800 bg-slate-200 shadow-xl rounded-full p-2 duration-700 hover:opacity-75" : "text-transparent"}
             />
           </>
         )}
@@ -87,23 +101,30 @@ export default function ImageSlider({ galleryImgs }) {
 function Arrow(props: {
   disabled: boolean;
   left?: boolean;
+  className?: string,
   onClick: (e: any) => void;
 }) {
   const disabeld = props.disabled ? ' arrow--disabled' : '';
   return (
     <svg
       onClick={props.onClick}
-      className={`arrow ${
+      className={`arrow ${props.className} ${
         props.left ? 'arrow--left' : 'arrow--right'
       } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
     >
       {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+      
       )}
       {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+      
       )}
     </svg>
   );

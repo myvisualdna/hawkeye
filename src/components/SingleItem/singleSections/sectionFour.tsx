@@ -1,4 +1,5 @@
 import React from 'react';
+import { Disclosure } from '@headlessui/react';
 
 type Props = {};
 
@@ -6,166 +7,154 @@ const SectionFour = (props: Props) => {
   return (
     <div>
       <div>
-        <div>
-          <h1 className="font-display font-bold text-2xl mb-8 text-gray-800">
-            Features
-          </h1>
+        <div className="pb-5 border-b border-gray-200 mb-6">
+          <h3 className="text-2xl leading-6 font-medium text-gray-900">
+            Facts and Features
+          </h3>
         </div>
-        <div className="grid grid-cols-1 xl:grid-cols-1">
-          <div></div>
-          <div>
-            <div className="flow-root">
-              <div className="-my-8 ">
-                <details className="pt-8 group">
-                  <summary className="flex items-center justify-between cursor-pointer bg-gradient-to-r from-zinc-50 via-green-200 to-green-400 hover:bg-gray-100 rounded-md p-2">
-                    <h5 className="text-lg font-medium text-gray-900">
-                      Interior Features
-                    </h5>
+        <div className="w-full ">
+          <div className="mx-auto w-full rounded-2xl bg-white ">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-50 px-4 py-4 text-left text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:ring ">
+                    <span>Interior Details</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={`${
+                        open ? 'rotate-180 transform' : ''
+                      } h-5 w-5 text-gray-500`}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                      />
+                    </svg>
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-4 pb-2 text-sm text-gray-500">
+                    <div className=" lg:w-full md:w-1/2 w-full">
+                      <div className="h-full flex items-center border-gray-100 border p-4 rounded-lg">
+                        <div className="flex-grow">
+                          <div className="flex items-end mb-2">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1.5}
+                              stroke="currentColor"
+                              className="w-6 h-6 mr-2"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                              />
+                            </svg>
+                            <h2 className="text-gray-900 title-font font-medium">
+                              Beds & Baths
+                            </h2>
+                          </div>
 
-                    <span className="relative flex-shrink-0 ml-1.5 w-5 h-5">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-
-                  <p className="mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
-                    hic veritatis molestias culpa in, recusandae laboriosam
-                    neque aliquid libero nesciunt voluptate dicta quo officiis
-                    explicabo consequuntur distinctio corporis earum similique!
-                  </p>
-                </details>
-
-                <details className="mt-8 group border-2">
-                  <summary className="flex items-center justify-between cursor-pointer bg-gradient-to-r from-zinc-50 via-green-200 to-green-600 hover:bg-gray-100 rounded-md p-2">
-                    <h5 className="text-lg font-medium text-gray-900">
-                      Exterior Features
-                    </h5>
-
-                    <span className="relative flex-shrink-0 ml-1.5 w-5 h-5">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-
-                  <div className='grid grid-cols-2 gap-8'>
-                    <div className='mt-2'>
-                    <h5 className='font-display text-base font-semibold'>Interior Details</h5>
-                      <ul className='mt-2'>
-                        <li>
-                          <p>Number of Rooms: 4</p>
-                          <p>Types of Rooms: Kitchen</p>
-                        </li>
-                      </ul>
+                          <div className="flex flex-wrap">
+                            <div className="flex-auto">
+                              <div className="text-gray-800 my-1">
+                                Number of Bedrooms: 4
+                              </div>
+                              <div className="text-gray-800 my-1">
+                                Number of Bathrooms (half): 1
+                              </div>
+                              <div className="text-gray-800 my-1">
+                                Main Level Bedrooms: 1
+                              </div>
+                              <div className="text-gray-800 my-1">
+                                Number of Bathrooms (full): 3
+                              </div>
+                            </div>
+                            <div className="flex-auto ">
+                              <div className="text-gray-800">
+                                Number of Bathrooms (main level): 1
+                              </div>
+                            </div>
+                            <div className="flex-auto ">
+                              <div className="text-gray-800">
+                                Third Column: let me see man
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className='bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400'>column2</div>
-                  </div>
-                </details>
-                <details className="pt-8 group">
-                  <summary className="flex items-center justify-between cursor-pointer bg-gradient-to-r from-zinc-50 via-green-200 to-green-800 hover:bg-gray-100 rounded-md p-2">
-                    <h5 className="text-lg font-medium text-gray-900">
-                      Location Details
-                    </h5>
-
-                    <span className="relative flex-shrink-0 ml-1.5 w-5 h-5">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 w-5 h-5 opacity-100 group-open:opacity-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute inset-0 w-5 h-5 opacity-0 group-open:opacity-100"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-
-                  <p className="mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
-                    hic veritatis molestias culpa in, recusandae laboriosam
-                    neque aliquid libero nesciunt voluptate dicta quo officiis
-                    explicabo consequuntur distinctio corporis earum similique!
-                  </p>
-                </details>
-              </div>
-            </div>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+            <Disclosure as="div" className="mt-2">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-50 px-4 py-4 text-left text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:ring ">
+                    <span>Exterior Details</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={`${
+                        open ? 'rotate-180 transform' : ''
+                      } h-5 w-5 text-gray-500`}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                      />
+                    </svg>
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                    If youre unhappy with your purchase for any reason, email us
+                    within 90 days and well refund you in full, no questions
+                    asked.
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+            <Disclosure as="div" className="mt-2">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-gray-50 px-4 py-4 text-left text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus-visible:ring ">
+                    <span>Interior Details</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className={`${
+                        open ? 'rotate-180 transform' : ''
+                      } h-5 w-5 text-gray-500`}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                      />
+                    </svg>
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                    If youre unhappy with your purchase for any reason, email us
+                    within 90 days and well refund you in full, no questions
+                    asked.
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           </div>
         </div>
-        <hr className="border-1 border-gray-200 rounded-full duration-500 my-12" />
       </div>
     </div>
   );

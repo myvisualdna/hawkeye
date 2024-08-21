@@ -2,14 +2,9 @@ import React, { FC } from 'react';
 import GallerySlider from 'src/components/SearchPage/SearchBody/GallerySlider/GallerySlider';
 // import { DEMO_STAY_LISTINGS } from './listings';
 import { StayDataType } from 'data/types';
-import StartRating from 'src/components/SingleItem/StartRating/StartRating';
 import Link from 'next/link';
 import BtnLikeIcon from 'src/components/SearchPage/SearchBody/BtnLikeIcon/BtnLikeIcon';
 import SaleOffBadge from 'src/components/SearchPage/SearchBody/SaleOffBadge/SaleOffBadge';
-import Badge from 'src/components/Shared/Badge/Badge';
-import { IoBedOutline } from 'react-icons/io5';
-import { FaShower } from 'react-icons/fa';
-import { HiOutlineArrowsExpand } from 'react-icons/hi';
 import { ImArrowDown2 } from 'react-icons/im';
 import Avatar from 'src/components/Shared/Avatar/Avatar';
 

@@ -7,11 +7,11 @@ export interface SaleOffBadgeProps {
 
 const SaleOffBadge: FC<SaleOffBadgeProps> = ({
   className = "",
-  desc = "-10% today",
+  desc = "New",
 }) => {
   return (
     <div
-      className={`nc-SaleOffBadge flex items-center justify-center text-xs py-0.5 px-3 bg-red-500 text-red-50 rounded-full ${className}`}
+      className={`nc-SaleOffBadge flex items-center justify-center text-xs py-1 px-3 bg-gray-100 text-gray-800 rounded-md hover:text-gray-100 hover:bg-black font-display font-semibold ${className}`}
       data-nc-id="SaleOffBadge"
     >
       {desc}

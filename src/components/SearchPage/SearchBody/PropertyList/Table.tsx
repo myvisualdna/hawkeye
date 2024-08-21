@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import SearchResultCard from 'src/components/Cards/SearchResultCard';
-import StayCardH from 'src/components/Cards/StayCardH/StayCardH';
+import MobileSearchMenu from '../../SearchComponents/mobileSearchMenu';
 import { sortRows, filterRows, paginateRows } from './helpers';
 import { Pagination } from './Pagination';
 
@@ -8,7 +8,7 @@ export const Table = ({ columns, rows }) => {
   const [activePage, setActivePage] = useState(1);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState({ order: 'asc', orderBy: 'id' });
-  const rowsPerPage = 10;
+  const rowsPerPage = 12;
 
   const filteredRows = useMemo(
     () => filterRows(rows, filters),
@@ -86,8 +86,6 @@ export const Table = ({ columns, rows }) => {
               {columns.map((column) => {
                 return (
                   <div key={column.accessor}>
-                    {/* {row[column.accessor]} */}
-                    {/* <StayCardH data={row} /> */}
                     <SearchResultCard data={row} />
                   </div>
                 );
@@ -96,26 +94,13 @@ export const Table = ({ columns, rows }) => {
           );
         })}
       </div>
-      <button
+      <div
         onclick="buttonHandler()"
         title="Mobile Search Button"
-        class="fixed lg:hidden z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300"
+        className="fixed lg:hidden z-90 bottom-10 right-8 bg-gray-900 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-gray-50 hover:text-black hover:drop-shadow-2xl active:animate-ping duration-300"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-          />
-        </svg>
-      </button>
+        <MobileSearchMenu />
+      </div>
 
       {count > 0 ? (
         <Pagination

@@ -7,6 +7,8 @@ import BackgroundSection from 'src/components/SingleItem/BackgroundSection/Backg
 import Container from 'src/components/Navigation/navContainer';
 import { useRouter } from 'next/router';
 import PromotedCards from 'src/components/Cards/PromotedCards';
+import SectionSeven from 'src/components/SingleItem/singleSections/sectionSeven';
+import SectionTop from 'src/components/SingleItem/singleSections/sectionTop';
 
 const property = {
   id: '21521551',
@@ -51,7 +53,7 @@ const property = {
     flooring: 'Carpet',
     sewer: false,
     basement: true,
-    roofType: 'Shingle'
+    roofType: 'Shingle',
   },
   featuredImage:
     'https://images.unsplash.com/photo-1663337048856-64be84c7d931?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80',
@@ -167,39 +169,40 @@ const SingleItem = (props: Props) => {
           <RenderPhotoHeader imgs={PHOTOS} />
 
           {/* MAIn */}
-          <main className="container relative z-10 mt-11 flex flex-col lg:flex-row xl:px-32 xl:gap-16">
+          <main className="container relative z-10 mt-12 flex flex-col lg:flex-row xl:px-32 xl:gap-16">
             {/* CONTENT */}
-            <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:space-y-10">
-              <SectionOne propertyData={property} />
+            <div className="w-full lg:w-3/5 xl:w-2/3 space-y-8 lg:space-y-16">
+              <SectionTop />
+              {/* <SectionOne propertyData={property} /> */}
               <SectionTwo />
               <SectionThree propertyData={property} />
               <SectionFour />
               <SectionFive />
               <SectionSix />
+              <SectionSeven />
             </div>
 
             {/* SIDEBAR */}
-            <div className="hidden lg:block flex-grow mt-14 lg:mt-0 xl:w-1/3">
+            <div className="hidden lg:block flex-grow mt-12 lg:mt-0 xl:w-1/3">
               <div className="sticky top-2">
                 <RenderSidebar />
               </div>
             </div>
           </main>
-
           {/* STICKY FOOTER MOBILE */}
           {/* {!isPreviewMode && <MobileFooterSticky />} */}
-
           {/* OTHER SECTION */}
           {
             <div className="container py-24 lg:py-16 lg:px-32">
               <PromotedCards
-                      categoryCardType="card2"
-                      subHeading="Find your home in the largest cities in the US"
-                      heading="Similar Homes You May Like"
-                      itemPerRow={5}
-                      uniqueClassName="PageHome2_s1" />
+                categoryCardType="card2"
+                subHeading="Find your home in the largest cities in the US"
+                heading="Similar Homes"
+                itemPerRow={5}
+                uniqueClassName="PageHome2_s1"
+              />
               {/* SECTION 1 */}
-              <div className="relative py-2">
+              {/* <div className="relative py-2">
                 <BackgroundSection />
                 <SectionSliderNewCategories
                   heading="Explore by types of stays"
@@ -209,7 +212,7 @@ const SingleItem = (props: Props) => {
                   sliderStyle="style1"
                   uniqueClassName={'ListingStayDetailPage1'}
                 />
-              </div>
+              </div> */}
             </div>
           }
         </div>

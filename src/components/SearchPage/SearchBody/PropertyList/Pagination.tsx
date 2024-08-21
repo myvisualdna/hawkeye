@@ -1,5 +1,10 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import { HiChevronDoubleRight, HiChevronDoubleLeft, HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
+import {
+  HiChevronDoubleRight,
+  HiChevronDoubleLeft,
+  HiOutlineChevronLeft,
+  HiOutlineChevronRight,
+} from 'react-icons/hi';
 
 interface Props {
   activePage: number;
@@ -27,9 +32,7 @@ export const Pagination = ({
             className="block w-8 h-8 text-center border border-gray-100 rounded leading-8 hover:bg-gray-100"
             onClick={() => setActivePage(activePage - 1)}
           >
-            <span className="">
-              {activePage - 1}
-            </span>
+            <span className="">{activePage - 1}</span>
           </button>
         ) : (
           ''
@@ -43,16 +46,14 @@ export const Pagination = ({
             disabled={activePage === totalPages}
             onClick={() => setActivePage(activePage + 1)}
           >
-            <span className="">
-              {activePage + 1}
-            </span>
+            <span className="">{activePage + 1}</span>
           </button>
         ) : (
           ''
         )}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <>
@@ -64,7 +65,7 @@ export const Pagination = ({
             disabled={activePage === 1}
             onClick={() => setActivePage(1)}
           >
-          <HiChevronDoubleLeft />
+            <HiChevronDoubleLeft />
           </button>
         </li>
         <li>

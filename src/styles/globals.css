@@ -27,7 +27,7 @@
 
 @layer components {
   .primary-button {
-    @apply inline-block px-12 py-3 text-sm font-medium text-white bg-gray-900 border border-gray-900 rounded active:text-gray-500 active:border-gray-500 hover:bg-transparent hover:text-gray-900 focus:outline-none;
+    @apply inline-block px-6 py-2 text-sm font-medium text-white bg-gray-900 border border-gray-900 rounded active:text-gray-500 active:border-gray-500 hover:bg-transparent hover:text-gray-900 focus:outline-none;
   }
   .secondary-button {
     @apply inline-block px-12 py-3 text-sm font-medium text-gray-900 border border-gray-900 rounded hover:bg-gray-900 hover:text-white active:bg-gray-100 active:border-gray-900  active:text-black focus:outline-none;

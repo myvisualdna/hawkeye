@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from "react";
+import MobileMenu from "./mobileMenu";
 
 type Props = {};
 
-const Navigation = (props: Props) => {
+const Navigation = () => {
+
+
   return (
     <div>
       <header className="shadow-sm">
-        <div className="p-4 mx-auto max-w-screen-2xl">
+        <div className="p-4 mx-auto max-w-screen-3xl">
           <div className="flex items-center justify-between space-x-4 lg:space-x-10">
             <div className="flex lg:w-0 lg:flex-1">
               <span className="w-20 h-10 bg-gray-200 rounded-lg"></span>
@@ -31,37 +34,10 @@ const Navigation = (props: Props) => {
               >
                 Log in
               </a>
-
-              <a
-                className="primary-button"
-                href=""
-              >
-                Sign up
-              </a>
             </div>
 
             <div className="lg:hidden">
-              <button
-                className="p-2 text-gray-600 bg-gray-100 rounded-lg"
-                type="button"
-              >
-                <span className="sr-only">Open menu</span>
-                <svg
-                  aria-hidden="true"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 6h16M4 12h16M4 18h16"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </button>
+            <MobileMenu />
             </div>
           </div>
         </div>

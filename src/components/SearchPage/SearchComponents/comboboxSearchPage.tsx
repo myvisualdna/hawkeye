@@ -39,7 +39,7 @@ const ComboSearchPage = (props: Props) => {
       <div>
         <Combobox value={selected} onChange={setSelected}>
           <div className="relative">
-            <div className="relative w-72 cursor-default overflow-hidden rounded-lg bg-white text-left  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm p-2 border-2 border-solid border-gray-100">
+            <div className="relative xs:w-32 md:w-64 lg:w-72 cursor-default overflow-hidden rounded-lg bg-white text-left  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm p-2 border border-solid border-gray-100">
               <div className="flex justify-center content-center items-center">
                 <IoMdSearch className='w-6 h-6 ml-2' />
                 <Combobox.Input
@@ -77,7 +77,7 @@ const ComboSearchPage = (props: Props) => {
               leaveTo="transform scale-95 opacity-0"
               afterLeave={() => setQuery('')}
             >
-              <Combobox.Options className="absolute mt-8 max-h-80 w-full overflow-auto rounded-xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              <Combobox.Options className="absolute mt-2 max-h-80 w-full overflow-auto rounded-xl bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {filteredPeople.length === 0 && query !== '' ? (
                   <div className="relative cursor-default select-none py-2 px-4 text-gray-700 font-display">
                     Nothing found.

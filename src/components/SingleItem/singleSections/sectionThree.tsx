@@ -288,15 +288,14 @@ const SectionThree = (props: Props) => {
   return (
     <div>
       <div>
-        <h1 className="font-display font-bold text-2xl mb-8 text-gray-800">
-          Amenities
-        </h1>
-        {/* <h4 className="font-body font-regular text-base text-gray-400 mt-2">
-          This property offers the following amenities:
-        </h4> */}
+        <div className="pb-5 border-b border-gray-200">
+          <h3 className="text-2xl leading-6 font-medium text-gray-900">
+            Amenities
+          </h3>
+        </div>
       </div>
       {/* <div className="w-14 border-b border-neutral-200 dark:border-neutral-700 mt-8"></div> */}
-      <div className="grid grid-cols-2 xl:grid-cols-3 gap-6 text-sm text-neutral-700 dark:text-neutral-300">
+      <div className="grid grid-cols-2 xl:grid-cols-3 gap-6 text-sm text-neutral-700 dark:text-neutral-300 mt-6">
         {Amenities_demos.filter((_, i) => i < 9)
           .filter((item) => item.data != null)
           .map((item) => (
@@ -334,7 +333,7 @@ const SectionThree = (props: Props) => {
             </Transition.Child>
 
             <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <div className="flex min-h-full items-center justify-center lg:p-4 text-center">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
@@ -344,7 +343,7 @@ const SectionThree = (props: Props) => {
                   leaveFrom="opacity-100 scale-100"
                   leaveTo="opacity-0 scale-95"
                 >
-                  <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-8 px-12 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Panel className="w-screen h-screen lg:h-full lg:w-full max-w-2xl transform overflow-hidden rounded-2xl bg-white p-8 px-12 text-left align-middle shadow-xl transition-all">
                     <Dialog.Title
                       as="h3"
                       className="text-lg font-medium leading-6 text-gray-900"
@@ -401,7 +400,6 @@ const SectionThree = (props: Props) => {
           </Dialog>
         </Transition>
       </>
-      <hr className="border-1 border-gray-200 rounded-full duration-500 my-12" />
     </div>
   );
 };
